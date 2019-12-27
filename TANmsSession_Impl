@@ -1,0 +1,34 @@
+public class TANmsSession_Impl extends NmsSession_IPOA {
+
+    private static Logger logger = LogManager.getLogger(TANmsSession_Impl.class);
+
+    private static void log(String str) {
+        System.out.println(str);
+    }
+
+    public void eventLossCleared(String endTime) {
+        logger.info("TANmsSession_IImpl.eventLossCleared(String endTime) is invoked by EMS(U2000).");
+        logger.info("endTime:" + endTime);
+
+    }
+
+    public void eventLossOccurred(String startTime, String notificationId) {
+        logger.info("TANmsSession_IImpl.eventLossOccurred(String startTime, String notificationId) is invoked by EMS.");
+        logger.info("startTime:" + startTime + ", notificationId:" + notificationId);
+    }
+
+    public Session_I associatedSession() {
+        logger.info("TANmsSession_IImpl.associatedSession() is invoked by EMS(U2000).");
+        return null;
+    }
+
+    public void  endSession() {
+        logger.info("TANmsSession_IImpl.endSession() is invoked by EMS(U2000).");
+
+    }
+
+    public void ping() {
+        // log("TANmsSession_IImpl.ping() is invoked by EMS(U2000).");
+
+    }
+}
